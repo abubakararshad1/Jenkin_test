@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-25T10:41:09.823035" rpa="false" schemaversion="5">
+<suite id="s1" name="RegisterationTest &amp; Frames &amp; Login">
+<suite id="s1-s1" name="RegisterationTest" source="C:\Users\Abubakar.Arshad\PycharmProjects\Genkin_Build\TestCases\RegisterationTest.robot">
+<test id="s1-s1-t1" name="RegistrationTest" line="22">
+<kw name="Open my Browser" owner="RegistrationKeyword">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:10.356173" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/test/newtours/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-25T10:41:10.355951" elapsed="19.748194"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-25T10:41:30.104467" elapsed="0.037152"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-09-25T10:41:10.355274" elapsed="19.786554"/>
+</kw>
+<kw name="Click Register Button" owner="RegistrationKeyword">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:30.143349" level="INFO">Clicking element '//a[text()='REGISTER']'.</msg>
+<arg>${link_register}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:30.142771" elapsed="0.520585"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-25T10:41:40.664718" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-25T10:41:30.663531" elapsed="10.001442"/>
+</kw>
+<status status="PASS" start="2025-09-25T10:41:30.142365" elapsed="10.522853"/>
+</kw>
+<kw name="Enter firstnam" owner="RegistrationKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:40.667453" level="INFO">Typing text 'abubakar' into text field 'name:firstName'.</msg>
+<arg>${textbox_firstname}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:40.666895" elapsed="0.095541"/>
+</kw>
+<arg>${firstname}</arg>
+<status status="PASS" start="2025-09-25T10:41:40.666123" elapsed="0.096426"/>
+</kw>
+<kw name="Enter lastname" owner="RegistrationKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:40.763425" level="INFO">Typing text 'arshad' into text field 'name:firstName'.</msg>
+<arg>${textbox_firstname}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:40.763236" elapsed="0.054375"/>
+</kw>
+<arg>${lastname}</arg>
+<status status="PASS" start="2025-09-25T10:41:40.762933" elapsed="0.054787"/>
+</kw>
+<kw name="Enter phoneno" owner="RegistrationKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:40.818630" level="INFO">Typing text '03234010255' into text field 'name:phone'.</msg>
+<arg>${textbox_phone}</arg>
+<arg>${phoneno}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:40.818425" elapsed="0.050079"/>
+</kw>
+<arg>${phoneno}</arg>
+<status status="PASS" start="2025-09-25T10:41:40.818076" elapsed="0.050541"/>
+</kw>
+<kw name="Enter email" owner="RegistrationKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:40.869536" level="INFO">Typing text 'abubakar.arshad1@gmail.com' into text field 'id:userName'.</msg>
+<arg>${textbox_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:40.869342" elapsed="0.061692"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-09-25T10:41:40.869032" elapsed="0.062129"/>
+</kw>
+<kw name="Enter address" owner="RegistrationKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:40.933705" level="INFO">Typing text '123 house no' into text field 'name:address1'.</msg>
+<arg>${textbox_address}</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:40.932683" elapsed="0.050273"/>
+</kw>
+<arg>${address}</arg>
+<status status="PASS" start="2025-09-25T10:41:40.931672" elapsed="0.051394"/>
+</kw>
+<kw name="Enter city" owner="RegistrationKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:40.983874" level="INFO">Typing text 'lahore' into text field 'name:city'.</msg>
+<arg>${textbox_city}</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:40.983692" elapsed="0.049237"/>
+</kw>
+<arg>${city}</arg>
+<status status="PASS" start="2025-09-25T10:41:40.983413" elapsed="0.049629"/>
+</kw>
+<kw name="Enter postalcode" owner="RegistrationKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:41.033877" level="INFO">Typing text '54570' into text field 'name:postalCode'.</msg>
+<arg>${textbox_postal}</arg>
+<arg>${postalcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:41:41.033692" elapsed="0.046566"/>
+</kw>
+<arg>${postalcode}</arg>
+<status status="PASS" start="2025-09-25T10:41:41.033399" elapsed="0.046967"/>
+</kw>
+<kw name="Pick country" owner="RegistrationKeyword">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:41.081289" level="INFO">Selecting options from selection list 'name:country' by value UGANDA.</msg>
+<arg>${dropdown_country}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-25T10:41:41.081102" elapsed="0.055018"/>
+</kw>
+<arg>${country}</arg>
+<status status="PASS" start="2025-09-25T10:41:41.080819" elapsed="0.055422"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-25T10:41:46.137385" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-25T10:41:41.136567" elapsed="5.001053"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-25T10:41:46.138542" elapsed="2.278674"/>
+</kw>
+<status status="PASS" start="2025-09-25T10:41:10.354378" elapsed="38.063762"/>
+</test>
+<status status="PASS" start="2025-09-25T10:41:09.861085" elapsed="38.559278"/>
+</suite>
+<suite id="s1-s2" name="Frames" source="C:\Users\Abubakar.Arshad\PycharmProjects\Genkin_Build\TestCases\Frames.robot">
+<test id="s1-s2-t1" name="Open the Website" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:41:48.428527" level="INFO">Opening browser 'Chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<arg>${WEBSITE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-25T10:41:48.428319" elapsed="24.285347"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-25T10:42:12.714069" elapsed="0.046195"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:42:12.761093" level="INFO">Clicking element 'xpath=//*[@id="alertBtn"]'.</msg>
+<arg>xpath=//*[@id="alertBtn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:42:12.760747" elapsed="0.081477"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-25T10:42:17.843026" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-25T10:42:12.842559" elapsed="5.000788"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:42:17.843937" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>accept</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-09-25T10:42:17.843767" elapsed="0.006614"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-25T10:42:20.851858" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-25T10:42:17.850750" elapsed="3.001259"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-09-25T10:42:20.852492" elapsed="2.102475"/>
+</kw>
+<status status="PASS" start="2025-09-25T10:41:48.427827" elapsed="34.527969"/>
+</test>
+<status status="PASS" start="2025-09-25T10:41:48.423073" elapsed="34.534559"/>
+</suite>
+<suite id="s1-s3" name="Login" source="C:\Users\Abubakar.Arshad\PycharmProjects\Genkin_Build\TestCases\Login.robot">
+<test id="s1-s3-t1" name="LoginTest" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:42:22.971745" level="INFO">Opening browser 'chrome' to base url 'https://demo.guru99.com/test/newtours/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-25T10:42:22.971479" elapsed="11.620758"/>
+</kw>
+<kw name="Enter Username" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:42:34.593603" level="INFO">Typing text 'tutorial' into text field 'name=userName'.</msg>
+<arg>${text_login_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:42:34.593208" elapsed="0.087917"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-09-25T10:42:34.592765" elapsed="0.088467"/>
+</kw>
+<kw name="Enter Password" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:42:34.682196" level="INFO">Typing text 'tutorial' into text field 'name=password'.</msg>
+<arg>${text_login_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:42:34.682008" elapsed="0.060900"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-09-25T10:42:34.681685" elapsed="0.061334"/>
+</kw>
+<kw name="Click submit Button" owner="LoginKeywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:42:34.743890" level="INFO">Clicking button 'xpath://input[@name='submit']'.</msg>
+<arg>${btn_signin_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-25T10:42:34.743634" elapsed="5.255130"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-25T10:42:44.999723" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-25T10:42:39.998942" elapsed="5.001022"/>
+</kw>
+<status status="PASS" start="2025-09-25T10:42:34.743338" elapsed="10.256863"/>
+</kw>
+<kw name="Verify successful login" owner="LoginKeywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-25T10:42:45.016911" level="INFO">Current page contains text 'Login Successfully'.</msg>
+<arg>Login Successfully</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-25T10:42:45.001647" elapsed="0.015396"/>
+</kw>
+<status status="PASS" start="2025-09-25T10:42:45.000961" elapsed="0.016195"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-25T10:42:45.017462" elapsed="2.132069"/>
+</kw>
+<status status="PASS" start="2025-09-25T10:42:22.971072" elapsed="24.179032"/>
+</test>
+<status status="PASS" start="2025-09-25T10:42:22.959945" elapsed="24.191366"/>
+</suite>
+<status status="PASS" start="2025-09-25T10:41:09.824396" elapsed="97.328531"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RegisterationTest &amp; Frames &amp; Login" id="s1" pass="3" fail="0" skip="0">RegisterationTest &amp; Frames &amp; Login</stat>
+<stat name="RegisterationTest" id="s1-s1" pass="1" fail="0" skip="0">RegisterationTest &amp; Frames &amp; Login.RegisterationTest</stat>
+<stat name="Frames" id="s1-s2" pass="1" fail="0" skip="0">RegisterationTest &amp; Frames &amp; Login.Frames</stat>
+<stat name="Login" id="s1-s3" pass="1" fail="0" skip="0">RegisterationTest &amp; Frames &amp; Login.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
