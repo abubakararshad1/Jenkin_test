@@ -12,7 +12,7 @@ ${BROWSER}          Chrome
 
 *** Test Cases ***
 Open the Website
-    Open Browser    ${WEBSITE_URL}    ${BROWSER}s
+    Open Browser    ${WEBSITE_URL}    ${BROWSER}
     Maximize Browser Window
 
     Click Element    xpath=//*[@id="alertBtn"]
