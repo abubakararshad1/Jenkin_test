@@ -9,11 +9,12 @@ pipeline {
             }
         }
 
-        stage('Run Robot Test Cases') {
+        stage('Install Dependencies') {
             steps {
-                // Run all .robot files inside Jenkin_test/TestCases
-                bat 'robot Jenkin_test/TestCases'
+                // Install Python dependencies listed in requirements.txt
+                bat 'pip install -r Jenkin_test/requirements.txt'
             }
         }
+
     }
 }
