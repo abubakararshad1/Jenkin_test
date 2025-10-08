@@ -9,12 +9,6 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Navigate to jenkin-test folder and install from requirements.txt
-                bat 'pip install -r jenkin_test/requirements.txt'
-            }
-        }
 
         stage('Run Test Cases') {
             steps {
