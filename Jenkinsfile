@@ -15,6 +15,12 @@ pipeline {
                 bat 'pip install -r Jenkin_test/requirements.txt'
             }
         }
+         stage('Run Robot Tests') { 
+        steps { 
+            bat 'robot Frames.robot' 
+
+                                 //or you can write bat 'robot *.robot' to execute all the robot files. 
+        }
 
     }
 }
