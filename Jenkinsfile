@@ -9,12 +9,13 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Install Python dependencies listed in requirements.txt
-                bat 'pip install -r Jenkin_test/requirements.txt'
-            }
+            stage('Install Dependencies') { 
+        steps { 
+            bat 'pip install robotframework robotframework-seleniumlibrary' 
         }
+                
+            }
+        
          stage('Run Robot Tests') { 
         steps { 
             bat 'robot Frames.robot' 
@@ -22,5 +23,5 @@ pipeline {
                                  //or you can write bat 'robot *.robot' to execute all the robot files. 
         }
 
-    }
 }
+    }}
