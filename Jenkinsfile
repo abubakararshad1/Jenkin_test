@@ -13,7 +13,6 @@ pipeline {
         stage('Install Dependencies') { 
             steps { 
                 echo 'Installing Robot Framework dependencies...'
-                bat 'pip install --upgrade pip'
                 bat 'pip install robotframework robotframework-seleniumlibrary'
             }
         }
