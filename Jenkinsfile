@@ -22,15 +22,9 @@ pipeline {
             steps { 
                 echo 'Running specific Robot Framework test files...'
                 bat 'robot TestCases/Frames.robot'
-                bat 'robot TestCases/RegisterationTest.robot'
-                // Add more files as needed
+                bat 'robot TestCases/RegisterationTest.robot
             }
         }
     }
 
-    post {
-        always {
-            echo 'Pipeline finished. Optionally archive or clean up artifacts here.'
-        }
-    }
 }
