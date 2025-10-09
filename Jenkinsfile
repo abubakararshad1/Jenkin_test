@@ -24,7 +24,7 @@ pipeline {
                 // bat 'robot TestCases'
                 // OR if you prefer to be explicit
                     
-                    bat 'robot TestCases/Frames.robot'
+                    bat 'robot TestCases\\\\Frames.robot'
                 
             }
         }
