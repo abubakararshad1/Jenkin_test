@@ -21,8 +21,8 @@ pipeline {
         stage('Run Robot Tests') { 
             steps { 
                 echo 'Running specific Robot Framework test files...'
-                bat 'robot TestCases/Frames.robot'
-                bat 'robot TestCases/RegisterationTest.robot
+                bat 'robot TestCases\\*.robot'
+               
             }
         }
     }
