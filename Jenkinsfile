@@ -23,7 +23,10 @@ pipeline {
                 echo 'Running all Robot Framework test cases in TestCases folder...'
                 // bat 'robot TestCases'
                 // OR if you prefer to be explicit
-                    bat 'robot TestCases\\*.robot'
+                    bat 'robot TestCases\Frames.robot'
+                    bat 'robot TestCases\RegisterationTest.robot'
+                    bat 'robot TestCases\Frames.robot'
+                
             }
         }
     }
