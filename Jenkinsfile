@@ -22,6 +22,7 @@ pipeline {
                 echo 'Running all Robot Framework test files in TestCases folder...'
                 bat '''
                     for %%f in (TestCases\\*.robot) do (
+                        echo Running: %%f
                         robot "%%f"
                     )
                 '''
