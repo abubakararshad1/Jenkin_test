@@ -20,11 +20,19 @@ pipeline {
 
         stage('Run Robot Tests') { 
             steps { 
-                echo 'Running specific Robot Framework test files...'
-                bat 'robot TestCases\\*.robot'
-               
+                echo 'Running all Robot Framework test files in TestCases folder...'
+                bat '''
+                    for %%f in (TestCases\\*.robot) do (
+                        robot "%%f"
+                    )
+                '''
             }
         }
     }
 
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+    }
 }
