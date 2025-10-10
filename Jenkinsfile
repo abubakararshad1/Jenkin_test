@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Check Python') {
             steps {
                 echo 'Checking Python version...'
@@ -28,15 +27,11 @@ pipeline {
         always {
             echo 'Pipeline finished.'
 
-            // Archive the Robot Framework output files
-            archiveArtifacts artifacts: 'Results/*.html', fingerprint: true
+            // Required: archive output.xml for Robot plugin to work
+            archiveArtifacts artifacts: 'Results/output.xml', fingerprint: true
 
-            // (Optional) Use HTML Publisher Plugin to show report.html in Jenkins UI
-            publishHTML (target: [
-                reportDir: 'Results',
-                reportFiles: 'report.html',
-                reportName: 'Robot Framework Report'
-            ])
+            // Tell Jenkins Robot Framework Plugin to parse results
+            robot outputPath: 'Results'
         }
     }
 }
