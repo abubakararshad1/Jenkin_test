@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Check Python') {
             steps {
                 echo 'Checking Python version...'
@@ -9,15 +10,12 @@ pipeline {
             }
         }
 
-        stage('Run Robot Tests') { 
-            steps { 
-                echo 'Running all Robot Framework test files in TestCases folder...'
+        stage('Run Robot Tests') {
+            steps {
+                echo 'Running Robot Framework tests...'
                 bat '''
                     if not exist Results mkdir Results
-                    for %%f in (TestCases\\*.robot) do (
-                        echo Running: %%f
-                        robot -d Results "%%f"
-                    )
+                    robot -d Results TestCases/
                 '''
             }
         }
@@ -25,13 +23,20 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline finished.'
+            echo 'Tests finished. Archiving and publishing reports...'
 
-            // Required: archive output.xml for Robot plugin to work
-            archiveArtifacts artifacts: 'Results/output.xml', fingerprint: true
+            // Optional: archive output files for debugging
+            archiveArtifacts artifacts: 'Results/*.html', fingerprint: true
 
-            // Tell Jenkins Robot Framework Plugin to parse results
-            robot outputPath: 'Results'
+            // ✅ Publish Robot Framework HTML report to Jenkins UI
+            publishHTML(target: [
+                reportDir: 'Results',
+                reportFiles: 'report.html',
+                reportName: 'Robot Framework Report',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ])
         }
     }
 }
