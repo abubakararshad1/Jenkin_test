@@ -42,7 +42,7 @@ pipeline {
                 allowMissing: false
             ])
 
-            // ✅ Email the report and log to the updated recipient
+            // ✅ Email the report and log from Outlook sender to recipient
             emailext(
                 subject: "Robot Test Results: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                 body: """
@@ -54,6 +54,7 @@ pipeline {
 <p>The Robot Framework HTML test report has been generated.</p>
 <p><a href="${env.BUILD_URL}">Click here to view the full build and report</a></p>
 """,
+                from: 'admin@outlook.com',  // ✅ Optional: override sender if not globally set
                 to: 'abubakar.arshad@bssuniversal.com',
                 mimeType: 'text/html',
                 attachmentsPattern: 'Results/report.html, Results/log.html'
