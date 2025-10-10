@@ -46,16 +46,18 @@ pipeline {
             emailext(
                 subject: "Robot Test Results: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                 body: """
-<h3>Jenkins Build Notification</h3>
-<p><strong>Job:</strong> ${env.JOB_NAME}</p>
-<p><strong>Build Number:</strong> ${env.BUILD_NUMBER}</p>
-<p><strong>Status:</strong> <span style='color:${currentBuild.currentResult == "SUCCESS" ? "green" : "red"}'>
-    ${currentBuild.currentResult}</span></p>
-<p>The Robot Framework HTML test report has been generated.</p>
-<p><a href="${env.BUILD_URL}">Click here to view the full build and report</a></p>
-""",
+              
+               <h3>Jenkins Build Notification</h3>
+               <p><strong>Job:</strong> ${env.JOB_NAME}</p>
+               <p><strong>Build Number:</strong> ${env.BUILD_NUMBER}</p>
+               <p><strong>Status:</strong> <span style='color:${currentBuild.currentResult == "SUCCESS" ? "green" : "red"}'>
+               ${currentBuild.currentResult}</span></p>
+               <p>The Robot Framework HTML test report has been generated.</p>
+               <p><a href="${env.BUILD_URL}">Click here to view the full build and report</a></p>
+               """,
+                
                 from: 'admin@outlook.com',  // ✅ Optional: override sender if not globally set
-                to: 'abubakar.arshad@bssuniversal.com',
+                to: 'abubakar.arshad@bssuniversal.com, omar.mozzam@bssuniversal.com',
                 mimeType: 'text/html',
                 attachmentsPattern: 'Results/report.html, Results/log.html'
             )
