@@ -2,43 +2,62 @@ pipeline {
     agent any
 
     stages {
-
         stage('Check Python') {
             steps {
-                echo 'Checking Python version...'
                 bat 'python --version'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Run Robot Tests') {
             steps {
-                echo 'Running Robot Framework tests...'
+                // Ensure the Results folder exists
+                bat 'if not exist Results mkdir Results'
 
-                // Runs all .robot files in TestCases/ and outputs results to Results/
-                bat '''
-                    if not exist Results mkdir Results
-                    robot -d Results TestCases/
-                '''
+                // Run all Robot Framework test files inside TestCases/, output to Results/
+                bat 'robot -d Results TestCases/'
             }
         }
     }
 
     post {
         always {
-            echo 'Tests finished. Archiving and publishing reports...'
+            echo 'Archiving and emailing Robot Framework test reports...'
 
-            // 🗂️ Archive report and log files for future access/download
-            archiveArtifacts artifacts: 'Results/*.html', fingerprint: true
+            // ✅ Archive the generated HTML report and log
+            archiveArtifacts artifacts: 'Results/report.html, Results/log.html', allowEmptyArchive: true
 
-            // 🌐 Publish HTML report to Jenkins UI using HTML Publisher Plugin
+            // ✅ Publish Robot report in Jenkins UI (clickable from sidebar)
             publishHTML(target: [
-                reportDir: 'Results',             // Folder containing report.html
-                reportFiles: 'report.html',       // Main HTML file to open
-                reportName: 'Robot Framework Report', // Display name in Jenkins
-                keepAll: true,                    // Keep reports for all builds
-                alwaysLinkToLastBuild: true,      // Link always points to latest report
-                allowMissing: false               // Fail build if report.html is missing
+                reportDir: 'Results',
+                reportFiles: 'report.html',
+                reportName: 'Robot Framework Report',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
             ])
+
+            // ✅ Email the report and log to the updated recipient
+            emailext(
+                subject: "Robot Test Results: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
+                body: """
+<h3>Jenkins Build Notification</h3>
+<p><strong>Job:</strong> ${env.JOB_NAME}</p>
+<p><strong>Build Number:</strong> ${env.BUILD_NUMBER}</p>
+<p><strong>Status:</strong> <span style='color:${currentBuild.currentResult == "SUCCESS" ? "green" : "red"}'>
+    ${currentBuild.currentResult}</span></p>
+<p>The Robot Framework HTML test report has been generated.</p>
+<p><a href="${env.BUILD_URL}">Click here to view the full build and report</a></p>
+""",
+                to: 'abubakar.arshad@bssuniversal.com',
+                mimeType: 'text/html',
+                attachmentsPattern: 'Results/report.html, Results/log.html'
+            )
         }
     }
 }
