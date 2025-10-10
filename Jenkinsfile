@@ -57,7 +57,7 @@ pipeline {
                """,
                 
                 from: 'admin@outlook.com',  // ✅ Optional: override sender if not globally set
-                to: 'abubakar.arshad@bssuniversal.com, omar.mozzam@bssuniversal.com',
+                to: 'abubakar.arshad@bssuniversal.com, omar.moazzam@bssuniversal.com',
                 mimeType: 'text/html',
                 attachmentsPattern: 'Results/report.html, Results/log.html'
             )
